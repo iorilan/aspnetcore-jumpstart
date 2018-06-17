@@ -1,0 +1,73 @@
+﻿@model WebApplication1.DbModels.Person
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JoinDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JoinDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelItem => Model.Photo, "~/Views/Shared/DisplayPhoto.cshtml")
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
