@@ -4,11 +4,42 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using WebApplication1.DbModels;
+using WebApplication1.Models;
 
 namespace WebApplication1.Service
 {
+
     public class EmployeeService
     {
+	    public IList<Person> Search(out int totalCount,
+		    DateTime? startDate, DateTime? endDate,
+		    int start = 0, int pageSize = 10, string sortField = "", string sortDirection = "desc", string search = "")
+	    {
+		    totalCount = 0;
+
+		    try
+		    {
+			    using (var context = new EmployeeContext())
+			    {
+				    var query = context.Person.Where
+				    (x => (x.Name.Contains(search) ||
+				           string.IsNullOrEmpty(search)));
+
+				    var records = query.OrderByEx(sortDirection, sortField)
+					    .Skip(start).Take(pageSize)
+					    .ToList();
+
+				    totalCount = query.Count();
+
+				    return records;
+			    }
+		    }
+		    catch (Exception ex)
+		    {
+				//TODO log
+			    return new List<Person>();
+		    }
+	    }
 
 		public IList<Person> All()
 	    {

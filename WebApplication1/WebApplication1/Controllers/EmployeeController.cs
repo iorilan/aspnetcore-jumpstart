@@ -5,7 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using WebApplication1.DbModels;
+using WebApplication1.Models;
 using WebApplication1.Service;
 
 namespace WebApplication1.Controllers
@@ -17,6 +19,42 @@ namespace WebApplication1.Controllers
 	        var list = new EmployeeService().All();
             return View(list);
         }
+
+	    public IActionResult DataTableList()
+	    {
+		    return View();
+	    }
+
+		
+	    public JsonResult GetJsonData(int draw, int start, int length)
+	    {
+		    string search = "", sortColumn = "", sortDirection = "asc";
+		    this.GetDataTablePara(out search, out sortColumn, out sortDirection);
+
+		    DateTime? startDate;
+		    DateTime? endDate;
+		    this.GetDataTableDateRange(out startDate, out endDate);
+
+		    var dataTableData = new DataTableData
+		    {
+			    draw = draw
+		    };
+		    var recordsFiltered = 0;
+			
+		    var service = new EmployeeService();
+		    var eventData = service.Search(out recordsFiltered, startDate, endDate, start, length, sortColumn, sortDirection, search.Trim());
+		    dataTableData.data = eventData;
+
+
+		    dataTableData.recordsFiltered = recordsFiltered;
+		    return Json(dataTableData, new JsonSerializerSettings());
+	    }
+	    public class DataTableData
+	    {
+		    public int draw { get; set; }
+		    public int recordsFiltered { get; set; }
+		    public IList<Person> data { get; set; }
+	    }
 
 		[HttpGet]
 	    public IActionResult Create()

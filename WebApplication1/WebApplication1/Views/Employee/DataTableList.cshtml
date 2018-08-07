@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<table id="tblData" class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Id Number</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Join Date</th>
+        </tr>
+    </thead>
+</table>
+
+@section Scripts
+{
+    <script>
+     
+        $(document).ready(function () {
+            $('#tblData').on('change', 'select', function () {
+                var url = $(this).val(); // get selected value
+                if (url) { // require a URL
+                    window.location = url; // redirect
+                }
+                return false;
+            });
+
+
+            var columns = [
+                "Id",
+                "Name",
+                "IdNumber",
+                "Age",
+                "Address",
+                {
+                    NAME: "JoinDate",
+                    DATA: "JoinDate",
+                    RENDER: function(data, type, full, meta) {
+                        return ChangeDateFormat(data);
+                    }
+                }
+            ];
+
+            var paras = {
+                TABLE: $('#tblData'),
+                URL: "/Employee/GetJsonData", //fix me
+                COLUMNS: columns,
+                ORDER: [[0, "asc"]]
+                // COLUMNDEFS: [{ orderable: false, targets: [3] }]
+            };
+
+            var table = CreateDataTable(paras);
+        });
+    </script>
+}
+
