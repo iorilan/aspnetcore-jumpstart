@@ -1,0 +1,2 @@
+﻿//run below command in package console
+//Scaffold-DbContext "Server=DESKTOP-HDR4IFR;Database=Employee;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DbModels

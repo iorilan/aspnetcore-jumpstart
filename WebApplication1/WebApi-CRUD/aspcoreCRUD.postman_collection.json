@@ -1,0 +1,289 @@
+{
+	"id": "0761e690-5e03-4730-b423-b2017557385c",
+	"name": "aspcoreCRUD",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"7a65428b-06f2-4346-b2fd-99e43405b9f5",
+		"d7ad5ec4-ced2-49c5-8e47-ea9fdeebfd5a",
+		"6cedd0dd-3e71-4625-ad10-1877ad0a89ac",
+		"28a02c62-7a69-4f48-892c-45748d77aeb9"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "28a02c62-7a69-4f48-892c-45748d77aeb9",
+			"name": "getById",
+			"url": "http://localhost:44115/api/Employee/3",
+			"description": "",
+			"data": [
+				{
+					"key": "Name",
+					"value": "Jason",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "IdNumber",
+					"value": "S28394D",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Age",
+					"value": "31",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Address",
+					"value": "SDock road 456",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Join Date",
+					"value": "2018-03-01",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "CreatedAt",
+					"value": "2018-07-01",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "CreatedBy",
+					"value": "Admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "6cedd0dd-3e71-4625-ad10-1877ad0a89ac",
+			"name": "all",
+			"url": "http://localhost:44115/api/Employee/All",
+			"description": "",
+			"data": [
+				{
+					"key": "Name",
+					"value": "Jason",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "IdNumber",
+					"value": "S28394D",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Age",
+					"value": "31",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Address",
+					"value": "SDock road 456",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Join Date",
+					"value": "2018-03-01",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "CreatedAt",
+					"value": "2018-07-01",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "CreatedBy",
+					"value": "Admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "7a65428b-06f2-4346-b2fd-99e43405b9f5",
+			"name": "createPerson",
+			"url": "http://localhost:44115/api/Employee/Create",
+			"description": "",
+			"data": [
+				{
+					"key": "Name",
+					"value": "Tomas",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "IdNumber",
+					"value": "L29383U",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Age",
+					"value": "28",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Address",
+					"value": "LK0293 ROad",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "JoinDate",
+					"value": "2018-03-03 12:00:00",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "CreatedAt",
+					"value": "2018-07-03 12:00:00",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "CreatedBy",
+					"value": "Admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d7ad5ec4-ced2-49c5-8e47-ea9fdeebfd5a",
+			"name": "updatePerson",
+			"url": "http://localhost:44115/api/Employee/Update",
+			"description": "",
+			"data": [
+				{
+					"key": "IdNumber",
+					"value": "SSSSSSS",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Age",
+					"value": "41",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Address",
+					"value": "King Road",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Id",
+					"value": "3",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		}
+	]
+}
